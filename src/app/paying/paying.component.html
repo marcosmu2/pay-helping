@@ -1,0 +1,20 @@
+<h1 class="text-primary">Cuanto debo pagar?</h1>
+<h4 class="text-secondary">Tu ayuda a la hora de pagar por hora</h4>
+
+<div class="card">
+    <div class="input">
+        <label for="perHour">Precio por hora: </label>
+        <label class="text-xlarge" style="padding-top: 0.5%; padding-right: 0.5%;">$</label>
+        <input id="perHour" name="perHour" type="number" (input)="inputChanges($event)" />
+    </div>
+    <div class="label-horas">
+        <label class="range-label">Horas trabajadas:</label>
+        <b class="text-xlarge">{{mostrarHora()}}</b> 
+    </div>
+    <input  type="range" [min]="min" [max]="max" [step]="step" (input)="rangeChange($event)"  />
+
+    <div class="result">
+        <label>Total a pagar:</label>
+        <span class="text-result">{{mostrarResultado() | currency:'ARS':'symbol-narrow':'1.2-2'}}</span>
+    </div>
+</div>
