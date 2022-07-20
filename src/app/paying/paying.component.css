@@ -54,7 +54,7 @@ input::-webkit-inner-spin-button {
 
 .text-result{
     display: block;
-    font-size: 100px;
+    font-size: 80px;
 }
 
 .label-horas{
@@ -62,6 +62,12 @@ input::-webkit-inner-spin-button {
     display: flex; 
     justify-content: space-between;
     align-items: center;
+}
+
+@media only screen and (max-width: 826px) {
+  .text-result{
+    font-size: 40px;
+  }
 }
 
 input[type=range] {
@@ -141,7 +147,7 @@ input[type=range] {
     border-radius: 34px;
     cursor: pointer;
     margin-top: 0px;
-    /*Needed to keep the Edge thumb centred*/
+
   }
   input[type=range]:focus::-ms-fill-lower {
     background: rgba(16, 213, 193, 0.78);
@@ -149,12 +155,13 @@ input[type=range] {
   input[type=range]:focus::-ms-fill-upper {
     background: #8df6ec;
   }
-  /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
-  how to remove the virtical space around the range input in IE*/
+
   @supports (-ms-ime-align:auto) {
-    /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+
     input[type=range] {
       margin: 0;
-      /*Edge starts the margin from the thumb, not the track as other browsers do*/
+
     }
   }
+
+
