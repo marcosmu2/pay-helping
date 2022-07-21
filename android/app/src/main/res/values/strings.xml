@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Cuanto pagar?</string>
+    <string name="title_activity_main">Cuanto pagar?</string>
+    <string name="package_name">app.vercel.payHelping</string>
+    <string name="custom_url_scheme">app.vercel.payHelping</string>
+</resources>

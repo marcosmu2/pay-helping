@@ -48,7 +48,25 @@ describe('PayingComponent', () => {
     component.inputChanges({target:{value:"234"}});
 
     expect(component.price).toBe(234)
+  })
 
+  it('inputChanges must change properties equal 0 price with a number less than 0', () => {
+
+    component.price = 0
+
+    component.inputChanges({target:{value:"-234"}});
+
+    expect(component.price).toBe(0)
+  })
+
+  
+  it('inputChanges must change properties equal 10 million price with a number greater than 10 million', () => {
+
+    component.price = 0
+
+    component.inputChanges({target:{value:"100000000"}});
+
+    expect(component.price).toBe(10000000)
   })
 
   it('rangeChanges must change properties rangeValue', () => {
@@ -58,6 +76,27 @@ describe('PayingComponent', () => {
     expect(component.rangeValue).toBe(210)
 
   })
+
+  it('showError must be true if price is less than 0', () => {
+
+    component.showError = false;
+
+    component.inputChanges({target:{value:"-234"}});
+
+    expect(component.showError).toBeTruthy();
+
+  })
+
+  it('showErrorGreater must be true if price is greater than 10000000', () => {
+
+    component.showErrorGreater = false;
+
+    component.inputChanges({target:{value:"100000000"}});
+
+    expect(component.showErrorGreater).toBeTruthy();
+
+  })
+
 
   
 });

@@ -1,0 +1,6 @@
+{
+	"appId": "app.vercel.payHelping",
+	"appName": "pay-helping",
+	"webDir": "dist/pay-helping",
+	"bundledWebRuntime": false
+}

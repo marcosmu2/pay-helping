@@ -4,11 +4,21 @@
 <div class="card">
     <div class="input">
         <label for="perHour">Precio por hora: </label>
-        <label class="text-xlarge" style="padding-top: 0.5%; padding-right: 0.5%;">$</label>
-        <input id="perHour" name="perHour" type="number" (input)="inputChanges($event)" />
+        <label class="text-sign" style="padding-top: 0.5%; padding-right: 0.5%;">$</label>
+        <input id="perHour" name="perHour" type="number" [value]="price" (input)="inputChanges($event)"  #inputPrice (click)="inputPrice.select()" />
+    </div>
+    <div *ngIf="showError" style="background-color:salmon; color: white; padding-left: 10px; margin-top: 10px; ">
+        <b>
+            ERROR: Esta intentando ingresar un numero negativo.
+        </b>
+    </div>
+    <div *ngIf="showErrorGreater" style="background-color:salmon; color: white; padding-left: 10px; margin-top: 10px; ">
+        <b>
+            ERROR: Esta intentando ingresar un numero mayor a 10 millones
+        </b>
     </div>
     <div class="label-horas">
-        <label class="range-label">Horas trabajadas:</label>
+        <label>Horas trabajadas:</label>
         <b class="text-xlarge">{{mostrarHora()}}</b> 
     </div>
     <input  type="range" [min]="min" [max]="max" [step]="step" (input)="rangeChange($event)"  />

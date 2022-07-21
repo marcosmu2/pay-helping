@@ -10,13 +10,17 @@
     font-size: x-large;
 }
 
+.text-sign{
+  font-size: x-large;
+}
+
 .card{
     text-align: start;
     align-items: center;
     background-color: white;
     margin-top: 5%;
-    margin-right: 15%;
-    margin-left: 15%;
+    margin-right: 5%;
+    margin-left: 5%;
     padding: 5%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
@@ -67,6 +71,19 @@ input::-webkit-inner-spin-button {
 @media only screen and (max-width: 826px) {
   .text-result{
     font-size: 40px;
+  }
+
+  .label-horas{
+    display: block; 
+}
+
+  .text-xlarge{
+    font-size:medium;
+  }
+
+  label{
+    font-weight:lighter;
+    display: block;
   }
 }
 

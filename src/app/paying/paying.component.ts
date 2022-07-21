@@ -8,11 +8,13 @@ import { PayingService } from '../services/paying.service';
 })
 export class PayingComponent {
 
-  min : number = 60
-  max: number = 480
-  step : number = 15
-  rangeValue : number = 60
+  min : number = 60;
+  max: number = 480;
+  step : number = 15;
+  rangeValue : number = 60;
   price: number = 0;
+  showError: boolean = false;
+  showErrorGreater: boolean = false;
 
   constructor(private _payingServices: PayingService) { }
 
@@ -21,7 +23,21 @@ export class PayingComponent {
   }
 
   inputChanges( event: any){
-    this.price = +event.target.value;
+
+    this.showError = false;
+    this.showErrorGreater = false;
+    const newPrice = +event.target.value;
+
+    if(newPrice < 0){
+      this.price = 0;
+      this.showError = true;
+    }else if(newPrice > 10000000){
+      this.price = 10000000;
+      this.showErrorGreater = true
+    }
+    else{
+      this.price = newPrice;
+    }
   }
 
   mostrarHora(){
